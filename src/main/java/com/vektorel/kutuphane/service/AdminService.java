@@ -1,7 +1,6 @@
 package com.vektorel.kutuphane.service;
 
 import com.vektorel.kutuphane.dto.request.AdminSaveRQ;
-import com.vektorel.kutuphane.dto.request.AuthSaveRQ;
 import com.vektorel.kutuphane.dto.response.AdminRS;
 import com.vektorel.kutuphane.entity.Admin;
 import com.vektorel.kutuphane.exception.AllException;
@@ -10,8 +9,6 @@ import com.vektorel.kutuphane.mapper.IAdminMapper;
 import com.vektorel.kutuphane.repository.IAdminRepository;
 import com.vektorel.kutuphane.util.ServiceManager;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 public class AdminService extends ServiceManager<Admin,Long> {

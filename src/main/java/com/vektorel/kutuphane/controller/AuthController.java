@@ -1,7 +1,7 @@
 package com.vektorel.kutuphane.controller;
 
-import com.vektorel.kutuphane.dto.request.AuthSaveRQ;
-import com.vektorel.kutuphane.entity.enums.Role;
+import com.vektorel.kutuphane.dto.request.LoginRQ;
+import com.vektorel.kutuphane.dto.request.RegisterRQ;
 import com.vektorel.kutuphane.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,12 +13,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("auth")
 @RequiredArgsConstructor
 public class AuthController {
+
     private final AuthService authService;
 
-    @PostMapping("save")
-    public void saveAuth(@RequestBody AuthSaveRQ dto){
-       authService.saveAuth(dto);
+    @PostMapping("register")
+    public void register(@RequestBody RegisterRQ dto){
+       authService.register(dto);
+    }
 
+    @PostMapping("login")
+    public String login (@RequestBody LoginRQ dto){
+        return authService.login(dto);
     }
 
 

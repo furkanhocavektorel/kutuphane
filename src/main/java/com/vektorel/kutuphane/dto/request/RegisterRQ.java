@@ -7,7 +7,7 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AuthSaveRQ {
+public class RegisterRQ {
     private String name;
     private String surname;
     private String mailAddress;
@@ -17,5 +17,8 @@ public class AuthSaveRQ {
     private String role;
     private String securityQuestion;
     private String securityAnswer;
+    private Long countryId;
+    private Long cityId;
+    private String address;
 
 }
