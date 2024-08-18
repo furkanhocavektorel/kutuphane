@@ -18,4 +18,5 @@ public class Customer extends BaseEntity {
     private Long cityId;
     private String address;
     private Boolean suspended;
+    private Long authId;
 }

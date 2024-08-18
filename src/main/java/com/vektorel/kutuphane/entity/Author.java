@@ -1,6 +1,7 @@
 package com.vektorel.kutuphane.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 

@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/kutuphane
+    url: jdbc:postgresql://localhost:5400/kutuphane
     username: postgres
-    password: root
+    password: asd123asd
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
