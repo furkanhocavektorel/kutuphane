@@ -1,8 +1,6 @@
 package com.vektorel.kutuphane.exception;
 
-import com.vektorel.kutuphane.exception.custom.AdminException;
-import com.vektorel.kutuphane.exception.custom.AuthException;
-import com.vektorel.kutuphane.exception.custom.TokenException;
+import com.vektorel.kutuphane.exception.custom.*;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -25,6 +23,19 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(TokenException.class)
     @ResponseBody
     public ErrorMessage TokenExceptionHandler(TokenException exception){
+        return createError(exception.exp);
+    }
+
+
+    @ExceptionHandler(CustomerException.class)
+    @ResponseBody
+    public ErrorMessage CustomerExceptionHandler(CustomerException exception){
+        return createError(exception.exp);
+    }
+
+    @ExceptionHandler(BookException.class)
+    @ResponseBody
+    public ErrorMessage BookExceptionHandler(BookException exception){
         return createError(exception.exp);
     }
 

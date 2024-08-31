@@ -35,8 +35,6 @@ public class JwtManager {
             e.printStackTrace();
             return Optional.empty();
         }
-
-
     }
 
 

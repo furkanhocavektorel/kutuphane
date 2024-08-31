@@ -15,7 +15,6 @@ import com.vektorel.kutuphane.util.JwtManager;
 import com.vektorel.kutuphane.util.ServiceManager;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
 
 @Service
 public class AuthService extends ServiceManager<Auth,Long> {
@@ -37,7 +36,6 @@ public class AuthService extends ServiceManager<Auth,Long> {
     // bir service metotu içinden dto'dan gelen role bakarak
     // gerekli olan (admin kaydetme / customer kaydetme) metotlarına yönlendirilmeli.
 
-    // TODO saveAuth metodu test edilecek !!!!
     public void register(RegisterRQ dto){
 
         if (repository.existsByEmailOrUsername(dto.getMailAddress(), dto.getUsername())){
@@ -52,7 +50,6 @@ public class AuthService extends ServiceManager<Auth,Long> {
         }else if (auth.getRole()== Role.CUSTOMER){
             customerService.saveCustomer(ICustomerMapper.INSTANCE.toDto(dto), auth.getId());
         }
-
 
     }
 
@@ -73,6 +70,8 @@ public class AuthService extends ServiceManager<Auth,Long> {
         }
         return jwtManager.generateToken(auth.getId()).orElseThrow(()-> new TokenException(AllException.TOKEN_CREATE_ERROR));
     }
+
+
 
 
 

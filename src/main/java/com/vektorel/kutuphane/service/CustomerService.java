@@ -8,6 +8,8 @@ import com.vektorel.kutuphane.util.ServiceManager;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class CustomerService extends ServiceManager<Customer,Long> {
 
@@ -22,6 +24,10 @@ public class CustomerService extends ServiceManager<Customer,Long> {
         Customer customer= ICustomerMapper.INSTANCE.toCustomer(dto);
         customer.setAuthId(authId);
         save(customer);
+    }
+
+    public Optional<Customer> findByAuthId(Long authId){
+        return repository.findOptionalByAuthId(authId);
     }
 
 
