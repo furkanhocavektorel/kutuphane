@@ -43,4 +43,15 @@ public class AdminService extends ServiceManager<Admin,Long> {
         return findAll();
     }
 
+
+
+
+    public String metin(){
+        return "bu metin kullannıcıya dönülmeyecek" +
+                "yazılımcı için aciklama" +
+                "buraya lütfen dikkat edin." +
+                "öndemli bir aciklama olabilir." +
+                "projede readme unutmayın";
+    }
+
 }
