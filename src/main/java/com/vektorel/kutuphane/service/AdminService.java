@@ -38,6 +38,13 @@ public class AdminService extends ServiceManager<Admin,Long> {
         return repository.findByAuthId(authId);
     }
 
+    public int hesap(){
+        int sayi=33;
+        int sayi2=100;
+
+        int sonuc = sayi2+sayi/3;
+        return sonuc;
+    }
 
     public List<Admin> findAllAdmin() {
         return findAll();
