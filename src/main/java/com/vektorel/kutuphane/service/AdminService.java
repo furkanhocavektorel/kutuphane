@@ -50,4 +50,11 @@ public class AdminService extends ServiceManager<Admin,Long> {
         return findAll();
     }
 
+    public int hesap2(){
+        int sayi=33;
+        int sayi2=100;
+        int sonuc1 = sayi2+sayi/3;
+        return sonuc1;
+    }
+
 }
