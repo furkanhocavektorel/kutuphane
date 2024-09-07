@@ -62,7 +62,6 @@ public class AuthService extends ServiceManager<Auth,Long> {
 
     }*/
 
-
     public String login(LoginRQ dto){
         Auth auth= repository.findOptionalByEmailOrUsername(dto.getEmail(), dto.getUsername()).orElseThrow(()-> new AuthException(AllException.USERNAME_OR_EMAIL_NOT_FOUND));
         if (!auth.getPassword().equals(dto.getPassword())){
@@ -70,9 +69,5 @@ public class AuthService extends ServiceManager<Auth,Long> {
         }
         return jwtManager.generateToken(auth.getId()).orElseThrow(()-> new TokenException(AllException.TOKEN_CREATE_ERROR));
     }
-
-
-
-
 
 }

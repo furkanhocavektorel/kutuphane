@@ -10,6 +10,7 @@ import com.vektorel.kutuphane.repository.IAdminRepository;
 import com.vektorel.kutuphane.util.ServiceManager;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -37,5 +38,9 @@ public class AdminService extends ServiceManager<Admin,Long> {
         return repository.findByAuthId(authId);
     }
 
+
+    public List<Admin> findAllAdmin() {
+        return findAll();
+    }
 
 }

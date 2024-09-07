@@ -19,14 +19,9 @@ public class BookController {
     public ResponseEntity<List<BookResponse>> getBooks(@PathVariable(required = false) String token){
         return ResponseEntity.ok(bookService.bookList(token));
     }
-
     @PostMapping("save")
     public ResponseEntity<BookResponse> saveBook(@RequestBody BookSaveRQRecord dto){
         return ResponseEntity.ok(bookService.saveBook(dto));
     }
-
-
-
-
 
 }

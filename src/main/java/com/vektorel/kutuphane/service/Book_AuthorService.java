@@ -1,9 +1,6 @@
 package com.vektorel.kutuphane.service;
 
-import com.vektorel.kutuphane.entity.Book_Author;
 import com.vektorel.kutuphane.repository.IBook_AuthorRepository;
-import com.vektorel.kutuphane.util.ServiceManager;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("auth")
+@RequestMapping("")
 @RequiredArgsConstructor
 public class AuthController {
 
@@ -25,7 +25,5 @@ public class AuthController {
     public String login (@RequestBody LoginRQ dto){
         return authService.login(dto);
     }
-
-
 
 }

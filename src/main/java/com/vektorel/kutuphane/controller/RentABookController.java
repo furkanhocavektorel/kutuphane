@@ -14,11 +14,7 @@ import java.util.List;
 @RequestMapping("rent-a-book")
 @RequiredArgsConstructor
 public class RentABookController {
-
     private final RentABookService rentABookService;
-
-
-
     @PostMapping("rent")
     public ResponseEntity<?> rentBook(RentABookSaveRQ dto){
      return ResponseEntity.ok(rentABookService.saveRentABook(dto));
@@ -28,7 +24,6 @@ public class RentABookController {
     public ResponseEntity<List<RentABookRS>> rentalRequest(@PathVariable("token") String token){
         return ResponseEntity.ok(rentABookService.rentABookListForWait(token));
     }
-
 
     @PostMapping("approved-rent")
     public ResponseEntity<?> approvedBook(ApprovedBookRQ dto){
