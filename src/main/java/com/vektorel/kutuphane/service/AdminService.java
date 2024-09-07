@@ -38,23 +38,20 @@ public class AdminService extends ServiceManager<Admin,Long> {
         return repository.findByAuthId(authId);
     }
 
-    public int hesap(){
-        int sayi=33;
-        int sayi2=100;
-
-        int sonuc = sayi2+sayi/3;
-        return sonuc;
-    }
 
     public List<Admin> findAllAdmin() {
         return findAll();
     }
 
-    public int hesap2(){
-        int sayi=33;
-        int sayi2=100;
-        int sonuc1 = sayi2+sayi/3;
-        return sonuc1;
+
+
+
+    public String metin(){
+        return "bu metin kullannıcıya dönülmeyecek" +
+                "yazılımcı için aciklama" +
+                "buraya lütfen dikkat edin." +
+                "öndemli bir aciklama olabilir." +
+                "projede readme unutmayın";
     }
 
 }
